@@ -1,0 +1,63 @@
+<style type="text/css">
+	
+	.user-image .user-image-buttons {
+    color: #eee;
+    position: absolute;
+    top: 15%;
+    right: 33%;
+    background-color: #00BDCC;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .user-image {
+    text-align: center;
+  }
+</style>
+
+
+
+   <form class="form-horizontal" name="umListModel.userForm" novalidate ng-submit="">
+                    <!-- STO image upload section unsaved-warning-form-->
+                    <div class="form-group">
+                      <div class="image-upload">
+                        <div class="user_profile" ng-mouseover="umListModel.hoverIn()" ng-mouseleave="umListModel.hoverOut()">
+                         
+
+                          <div class="fileupload fileupload-new" data-provides="fileupload">
+                            <div class="user-image">
+                              <div class="fileupload-new thumbnail">
+                                <span ng-if="!umListModel.usrRes.empPic">
+                                  <img src="image/default.jpg" class="img-circle img-responsive" style="width:180px;height:180px">
+                                </span>
+                                <span ng-if="umListModel.usrRes.empPic">
+                                  <img ng-src="{{umListModel.usrRes.empPic}}" class="img-circle img-responsive" style="width:180px;height:180px">
+                                </span>
+
+                              </div>
+                              <div style="" class="user-image-buttons" ng-show="umListModel.hoverEdit">
+                                <span class="btn btn-azure btn-file btn-sm">
+                                  <span class="fileupload-new"><i class="fa fa-pencil"></i></span>
+                                  <span class="fileupload-exists"><i class="fa fa-pencil"></i></span>
+                                  <input class="ng-pristine ng-untouched ng-valid" ng-model="umListModel.usrRes.empPic" onchange="angular.element(this).scope().photoChanged(this.files)" type="file">
+
+
+                                </span>
+                                <a href="#" class="btn fileupload-exists btn-red btn-sm" data-dismiss="fileupload">
+                                  <i class="fa fa-times"></i>
+                                </a>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+
+
+
+                    <br>
+                    <br>
+                  

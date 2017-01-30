@@ -1,0 +1,102 @@
+<style>
+  .header {
+    top: 0px;
+    margin-left: -15px;
+    height: 50px;
+    width: 100%;
+    background-color: #337ab7;
+    /*color: #fff;*/
+    position: fixed;
+  }
+
+  .boddy-section {}
+
+  .left-menu {
+    position: absolute;
+    height: 500px;
+    background-color: gray;
+    top: 50px;
+    position: fixed;
+    left: 0;
+  }
+
+  .showMenu {
+    width: 200px !important;
+  }
+
+  .main-container {
+    position: fixed;
+    margin-top: 50px;
+    margin-left: 180px;
+  }
+
+  .main-container.main-container-exp {
+    margin-left: 50px;
+  }
+  ul li:hover{
+    cursor: pointer;
+  }
+  .colored{
+    color:red;
+    cursor: pointer;
+  }
+
+  .head-icon{
+    background-color: gray;
+    border-radius: 50%;
+    width:20px;
+    margin-left: 100px;
+  }
+
+  .toggle-btn:hover {
+    background: #C3C3C3;
+    color: #fff;
+}
+.toggle-btn {
+    font-size: 15px;
+    padding: 10px 0 0;
+    width: 40px;
+    height: 40px;
+    margin: .5em 1em 0 0.5em;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    border: none;
+    border-radius: 100%;
+    -moz-transition: all 0.2s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+}
+</style>
+
+
+<div class="">
+  <div class="header">
+ <!--  <a class="hidden-xs hidden-sm toggle-btn colored menu-collapsed" ng-click="leftShow = !leftShow" collapse-sidebar>
+    
+    <i class="fa fa-dedent"></i>
+  </a> -->
+  <a class="hidden-xs hidden-sm toggle-btn colored menu-collapsed head-icon"  ng-click="leftShow = !leftShow" collapse-sidebar="">
+    <!--<i class="fa fa-indent"></i>-->
+    <i class="fa fa-indent"></i>
+  </a>
+    <!-- <button ng-click="leftShow = !leftShow"><i class="fa fa-indent"></i>top</button> -->
+  </div>
+
+
+
+  <div class="left-menu" ng-class="{'showMenu':leftShow}">
+    <ul>
+      <li ui-sref="dashboard.application"> Link 1</li>
+       <li ui-sref="dashboard.application1"> Link 2</li>
+      <li>text </li>
+      <li>text </li>
+    </ul>
+  </div>
+
+  <div class="col-md-10 main-container" ng-class="{'main-container-exp':!leftShow}">
+    <!--bread crumb  -->
+    <div ui-view></div>
+  </div>
+
+</div>
