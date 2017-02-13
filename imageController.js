@@ -49,7 +49,38 @@ $scope.umListModel = {}; //module name specification
 
     };
 
-  
+
+
+$scope.photoChange = function(files){
+
+  $scope.files = files;
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $scope.umListModel.usrRes.ggg = e.target.result;
+        console.log("image preview with base 64 file2" , $scope.umListModel.usrRes.ggg)
+        if (!$scope.$$phase) {
+          $scope.$apply();
+        }
+      };
+      reader.readAsDataURL(files[0]);
+
+};
+
+$scope.photoChang = function(files){
+
+  $scope.files = files;
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $scope.umListModel.usrRes.gg = e.target.result;
+        console.log("image preview with base 64 file3" , $scope.umListModel.usrRes.gg)
+        if (!$scope.$$phase) {
+          $scope.$apply();
+        }
+      };
+      reader.readAsDataURL(files[0]);
+
+
+};
   }
 
 
